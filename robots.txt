@@ -1,0 +1,9 @@
+# robots.txt for Ubuntu Paws Rescue
+# Allow all crawlers to index the public pages and point them to the sitemap.
+User-agent: *
+Allow: /
+# Data files are for the site's own scripts, not for search results
+Disallow: /data/
+
+# Replace the domain below with your deployed URL
+Sitemap: https://ubuntu-paws-rescue.netlify.app/sitemap.xml

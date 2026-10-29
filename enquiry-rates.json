@@ -1,0 +1,7 @@
+{
+  "volunteer": { "label": "Volunteering", "unit": "volunteer hours", "cost": 0, "openDays": [1, 2, 3, 4, 5, 6], "hours": "08:00 to 12:00", "note": "Free to join. Please wear closed shoes." },
+  "sponsor": { "label": "Sponsoring an animal", "unit": "animals", "cost": 250, "perMonth": true, "openDays": [1, 2, 3, 4, 5, 6], "hours": "08:00 to 16:00", "note": "Sponsors receive a monthly photo update." },
+  "adopt": { "label": "Adopting an animal", "unit": "animals", "cost": 650, "openDays": [2, 3, 4, 5, 6], "hours": "09:00 to 15:00", "note": "Fee covers sterilisation, vaccination and microchip. Home check required." },
+  "foster": { "label": "Fostering an animal", "unit": "animals", "cost": 0, "openDays": [1, 2, 3, 4, 5], "hours": "09:00 to 15:00", "note": "Food and vet care are supplied." },
+  "school": { "label": "School education visit", "unit": "classes", "cost": 0, "openDays": [2, 3, 4], "hours": "09:00 to 13:00", "note": "Visits run Tuesday to Thursday during term time." }
+}

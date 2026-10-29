@@ -1,0 +1,10 @@
+[
+  { "id": 1, "name": "Dog Adoption", "category": "Adoption", "price": 650, "priceNote": "once-off fee (includes sterilisation and vaccinations)", "description": "Give a rescued dog a forever home. Every dog is health-checked, sterilised, vaccinated and microchipped before adoption." },
+  { "id": 2, "name": "Cat Adoption", "category": "Adoption", "price": 450, "priceNote": "once-off fee (includes sterilisation and vaccinations)", "description": "Adopt a rescued cat or kitten. Our team will help match a cat to your home and lifestyle." },
+  { "id": 3, "name": "Sterilisation Clinic", "category": "Veterinary", "price": 300, "priceNote": "per animal, subsidised for community members", "description": "Low-cost sterilisation for pets in surrounding communities to reduce the number of unwanted litters." },
+  { "id": 4, "name": "Vaccination Drive", "category": "Veterinary", "price": 80, "priceNote": "per animal", "description": "Monthly community vaccination drive covering rabies and core vaccines." },
+  { "id": 5, "name": "Foster Care Programme", "category": "Community", "price": 0, "priceNote": "food and vet care are supplied by us", "description": "Open your home to an animal for a few weeks while it recovers or waits for adoption." },
+  { "id": 6, "name": "Volunteer Programme", "category": "Community", "price": 0, "priceNote": "free to join", "description": "Walk dogs, socialise cats, help at adoption days or assist in the office. No experience required." },
+  { "id": 7, "name": "Sponsor an Animal", "category": "Community", "price": 250, "priceNote": "per animal per month", "description": "Cover the monthly food and medical care of one animal until it finds a home." },
+  { "id": 8, "name": "School Education Visit", "category": "Education", "price": 0, "priceNote": "free for schools", "description": "A 45-minute interactive talk on responsible pet ownership and animal welfare for learners." }
+]

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enquiry | Volunteer, Sponsor or Adopt | Ubuntu Paws Rescue</title>
+  <meta name="description" content="Enquire about volunteering, sponsoring, adopting or fostering an animal at Ubuntu Paws Rescue and get instant cost and availability information.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org https://unpkg.com; connect-src 'self'; base-uri 'self'; object-src 'none'">
+  <link rel="canonical" href="https://ubuntu-paws-rescue.netlify.app/enquiry.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Enquiry | Volunteer, Sponsor or Adopt | Ubuntu Paws Rescue">
+  <meta property="og:description" content="Enquire about volunteering, sponsoring, adopting or fostering an animal at Ubuntu Paws Rescue and get instant cost and availability information.">
+  <meta property="og:url" content="https://ubuntu-paws-rescue.netlify.app/enquiry.html">
+  <meta property="og:image" content="https://ubuntu-paws-rescue.netlify.app/images/hero-paw-pattern.svg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Shared site header: logo plus main navigation (aria-current marks the active page) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="Ubuntu Paws Rescue paw logo" width="40" height="40"><span>Ubuntu Paws Rescue</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="enquiry.html" aria-current="page">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <h1>Enquiry</h1>
+    <p>Ask about volunteering, sponsoring, adopting, fostering or a school visit. After you submit, we show the cost and availability straight away.</p>
+    <p class="hint">Fields marked <span class="req">*</span> are required.</p>
+
+    <!-- action points to this page as a no-JavaScript fallback; main flow uses fetch() in forms.js -->
+    <form class="form" id="enquiry-form" action="enquiry.html" method="get" novalidate>
+        <div class="field">
+          <label for="fullName">Full name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="fullName" name="fullName" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="fullName-error">
+          <p class="error-msg" id="fullName-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="email">Email address <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
+          <p class="error-msg" id="email-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="phone">Phone number <span class="req" aria-hidden="true">*</span></label>
+          <p class="hint" id="phone-hint">South African format, for example 082 123 4567 or +27 82 123 4567.</p>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" required inputmode="tel" aria-describedby="phone-hint phone-error">
+          <p class="error-msg" id="phone-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="enquiryType">What would you like to enquire about? <span class="req" aria-hidden="true">*</span></label>
+          <select id="enquiryType" name="enquiryType" required aria-describedby="enquiryType-error">
+            <option value="">Select one...</option>
+            <option value="volunteer">Volunteering</option>
+            <option value="sponsor">Sponsoring an animal</option>
+            <option value="adopt">Adopting an animal</option>
+            <option value="foster">Fostering an animal</option>
+            <option value="school">School education visit</option>
+          </select>
+          <p class="error-msg" id="enquiryType-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="preferredDate">Preferred date <span class="req" aria-hidden="true">*</span></label>
+          <p class="hint" id="preferredDate-hint">Choose a date from tomorrow up to 12 months ahead.</p>
+          <input type="date" id="preferredDate" name="preferredDate" required aria-describedby="preferredDate-hint preferredDate-error">
+          <p class="error-msg" id="preferredDate-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="quantity">How many? (hours, animals or classes) <span class="req" aria-hidden="true">*</span></label>
+          <input type="number" id="quantity" name="quantity" min="1" max="50" step="1" value="1" required aria-describedby="quantity-error">
+          <p class="error-msg" id="quantity-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="message">Tell us more <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500" aria-describedby="message-count message-error"></textarea>
+          <p class="hint" id="message-count">0 / 500 characters (minimum 10)</p>
+          <p class="error-msg" id="message-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label><input type="checkbox" id="consent" name="consent" required aria-describedby="consent-error"> I agree that Ubuntu Paws Rescue may contact me about this enquiry. <span class="req" aria-hidden="true">*</span></label>
+          <p class="error-msg" id="consent-error" aria-live="polite"></p>
+        </div>
+      <button class="btn" type="submit">Check cost and availability</button>
+    </form>
+    <div class="response" id="enquiry-response" role="status" aria-live="polite" hidden></div>
+  </main>
+
+  <!-- Shared site footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <h2>Ubuntu Paws Rescue</h2>
+        <p>Rescuing, rehoming and caring for animals in Johannesburg.</p>
+        <p>Fictional organisation created for a student web-development project.</p>
+      </section>
+      <section>
+        <h2>Quick links</h2>
+        <ul>
+          <li><a href="services.html">Adopt a dog or cat</a></li>
+          <li><a href="enquiry.html">Volunteer or sponsor</a></li>
+          <li><a href="about.html">Our story</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <p>12 Example Road, Johannesburg<br>Email: <a href="mailto:hello@ubuntupaws.example">hello@ubuntupaws.example</a></p>
+        <p>&copy; 2026 Ubuntu Paws Rescue</p>
+      </section>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+  <script src="js/forms.js" defer></script>
+</body>
+</html>

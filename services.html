@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services | Adoption and Sterilisation | Ubuntu Paws</title>
+  <meta name="description" content="Search and filter Ubuntu Paws Rescue services: dog and cat adoption, sterilisation clinic, vaccinations, fostering, volunteering and sponsorship.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org https://unpkg.com; connect-src 'self'; base-uri 'self'; object-src 'none'">
+  <link rel="canonical" href="https://ubuntu-paws-rescue.netlify.app/services.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Services | Adoption and Sterilisation | Ubuntu Paws">
+  <meta property="og:description" content="Search and filter Ubuntu Paws Rescue services: dog and cat adoption, sterilisation clinic, vaccinations, fostering, volunteering and sponsorship.">
+  <meta property="og:url" content="https://ubuntu-paws-rescue.netlify.app/services.html">
+  <meta property="og:image" content="https://ubuntu-paws-rescue.netlify.app/images/hero-paw-pattern.svg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Shared site header: logo plus main navigation (aria-current marks the active page) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="Ubuntu Paws Rescue paw logo" width="40" height="40"><span>Ubuntu Paws Rescue</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" aria-current="page">Services</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <h1>Our services</h1>
+    <p>From adoption to sterilisation, see how Ubuntu Paws Rescue helps animals and the people who love them.</p>
+
+    <section aria-labelledby="search-title">
+      <h2 id="search-title">Find a service</h2>
+      <!-- Controls: search text, category filter and sort order; list is loaded with fetch() from data/services.json -->
+      <form class="controls" id="service-controls" role="search" onsubmit="return false">
+        <div class="field">
+          <label for="search">Search services</label>
+          <input type="search" id="search" placeholder="Try: adopt, vaccination, volunteer" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category"><option value="all">All categories</option></select>
+        </div>
+        <div class="field">
+          <label for="sort">Sort by</label>
+          <select id="sort">
+            <option value="name-asc">Name (A to Z)</option>
+            <option value="name-desc">Name (Z to A)</option>
+            <option value="price-asc">Price (low to high)</option>
+            <option value="price-desc">Price (high to low)</option>
+          </select>
+        </div>
+      </form>
+      <p class="result-count" id="result-count" aria-live="polite">Loading services...</p>
+      <div class="grid grid-3" id="service-list"></div>
+      <noscript><p>Please enable JavaScript to browse and search our services, or contact us for a full list.</p></noscript>
+    </section>
+
+    <section class="reveal" aria-labelledby="faq-title">
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <!-- Accordion: one panel open at a time -->
+      <div class="accordion" id="faq">
+        <div class="acc-item">
+          <h3><button class="acc-btn" id="acc-btn-0" aria-expanded="false" aria-controls="acc-panel-0">How does dog adoption work?</button></h3>
+          <div class="acc-panel" id="acc-panel-0" role="region" aria-labelledby="acc-btn-0"><div><p>Browse our services, send an enquiry, and we will arrange a meeting and a home check. The adoption fee covers sterilisation, vaccination and microchipping.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-btn" id="acc-btn-1" aria-expanded="false" aria-controls="acc-panel-1">Can I adopt if I rent my home?</button></h3>
+          <div class="acc-panel" id="acc-panel-1" role="region" aria-labelledby="acc-btn-1"><div><p>Yes, as long as your landlord allows pets. We ask for written permission from your landlord during the home check.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-btn" id="acc-btn-2" aria-expanded="false" aria-controls="acc-panel-2">What does sponsoring an animal pay for?</button></h3>
+          <div class="acc-panel" id="acc-panel-2" role="region" aria-labelledby="acc-btn-2"><div><p>Your monthly sponsorship covers food, vaccinations and medical care for one animal until it is adopted.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <h3><button class="acc-btn" id="acc-btn-3" aria-expanded="false" aria-controls="acc-panel-3">Do I need experience to volunteer?</button></h3>
+          <div class="acc-panel" id="acc-panel-3" role="region" aria-labelledby="acc-btn-3"><div><p>No. We train every volunteer on their first shift. Volunteers must be 16 or older, or accompanied by an adult.</p></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared site footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <h2>Ubuntu Paws Rescue</h2>
+        <p>Rescuing, rehoming and caring for animals in Johannesburg.</p>
+        <p>Fictional organisation created for a student web-development project.</p>
+      </section>
+      <section>
+        <h2>Quick links</h2>
+        <ul>
+          <li><a href="services.html">Adopt a dog or cat</a></li>
+          <li><a href="enquiry.html">Volunteer or sponsor</a></li>
+          <li><a href="about.html">Our story</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <p>12 Example Road, Johannesburg<br>Email: <a href="mailto:hello@ubuntupaws.example">hello@ubuntupaws.example</a></p>
+        <p>&copy; 2026 Ubuntu Paws Rescue</p>
+      </section>
+    </div>
+  </footer>
+  <script src="js/main.js" defer></script>
+  <script src="js/services.js" defer></script>
+</body>
+</html>

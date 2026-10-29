@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact and Map | Ubuntu Paws Rescue Johannesburg</title>
+  <meta name="description" content="Find Ubuntu Paws Rescue on the map, see opening hours for our two Johannesburg sites and send us a message about adoption, volunteering or strays.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' https://unpkg.com; img-src 'self' data: https://*.tile.openstreetmap.org https://unpkg.com; connect-src 'self'; base-uri 'self'; object-src 'none'">
+  <link rel="canonical" href="https://ubuntu-paws-rescue.netlify.app/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact and Map | Ubuntu Paws Rescue Johannesburg">
+  <meta property="og:description" content="Find Ubuntu Paws Rescue on the map, see opening hours for our two Johannesburg sites and send us a message about adoption, volunteering or strays.">
+  <meta property="og:url" content="https://ubuntu-paws-rescue.netlify.app/contact.html">
+  <meta property="og:image" content="https://ubuntu-paws-rescue.netlify.app/images/hero-paw-pattern.svg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AnimalShelter",
+  "name": "Ubuntu Paws Rescue",
+  "description": "A fictional non-profit animal rescue in Johannesburg offering adoption, sterilisation, fostering and volunteering.",
+  "url": "https://ubuntu-paws-rescue.netlify.app/",
+  "email": "matodzimanaga61w@ubuntupaws.example",
+  "address": { "@type": "PostalAddress", "streetAddress": "12 Example Road", "addressLocality": "Johannesburg", "addressRegion": "Gauteng", "addressCountry": "ZA" },
+  "geo": { "@type": "GeoCoordinates", "latitude": -26.2041, "longitude": 28.0473 }
+}
+</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- Shared site header: logo plus main navigation (aria-current marks the active page) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="images/logo.svg" alt="Ubuntu Paws Rescue paw logo" width="40" height="40"><span>Ubuntu Paws Rescue</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <h1>Contact us</h1>
+    <p>Visit one of our two Johannesburg sites, or send us a message below.</p>
+
+    <section aria-labelledby="map-title">
+      <h2 id="map-title">Find us</h2>
+      <!-- Locations are the single source of truth: map.js reads these data attributes and adds one marker each -->
+      <ul class="grid grid-2" id="locations">
+        <li class="card" data-lat="-26.2041" data-lng="28.0473" data-name="Main shelter and clinic">
+          <h3>Main shelter and clinic</h3>
+          <p>12 Example Road, Johannesburg CBD<br>Open Monday to Saturday, 08:00 to 16:00</p>
+        </li>
+        <li class="card" data-lat="-26.1076" data-lng="28.0567" data-name="Adoption centre">
+          <h3>Adoption centre</h3>
+          <p>34 Sample Avenue, Sandton<br>Open Tuesday to Saturday, 09:00 to 15:00</p>
+        </li>
+      </ul>
+      <div id="map" role="region" aria-label="Map showing our two Johannesburg locations"></div>
+      <noscript><p>The interactive map needs JavaScript. Our addresses are listed above.</p></noscript>
+      <p class="hint">Addresses are fictional. Map data &copy; OpenStreetMap contributors.</p>
+    </section>
+
+    <section aria-labelledby="form-title">
+      <h2 id="form-title">Send us a message</h2>
+      <p class="hint">Fields marked <span class="req">*</span> are required.</p>
+      <form class="form" id="contact-form" action="contact.html" method="get" novalidate>
+        <div class="field">
+          <label for="contactName">Your name <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="contactName" name="contactName" autocomplete="name" required minlength="2" maxlength="60" aria-describedby="contactName-error">
+          <p class="error-msg" id="contactName-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="contactEmail">Your email address <span class="req" aria-hidden="true">*</span></label>
+          <input type="email" id="contactEmail" name="contactEmail" autocomplete="email" required aria-describedby="contactEmail-error">
+          <p class="error-msg" id="contactEmail-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="contactPhone">Phone number <span class="hint">(optional)</span></label>
+          <input type="tel" id="contactPhone" name="contactPhone" autocomplete="tel" inputmode="tel" aria-describedby="contactPhone-error">
+          <p class="error-msg" id="contactPhone-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="messageType">Type of message <span class="req" aria-hidden="true">*</span></label>
+          <select id="messageType" name="messageType" required aria-describedby="messageType-error">
+            <option value="">Select one...</option>
+            <option value="General question">General question</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Report a stray or animal in need">Report a stray or animal in need</option>
+            <option value="Media or partnership">Media or partnership</option>
+          </select>
+          <p class="error-msg" id="messageType-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="subject">Subject <span class="req" aria-hidden="true">*</span></label>
+          <input type="text" id="subject" name="subject" required minlength="3" maxlength="80" aria-describedby="subject-error">
+          <p class="error-msg" id="subject-error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="contactMessage">Message <span class="req" aria-hidden="true">*</span></label>
+          <textarea id="contactMessage" name="contactMessage" rows="6" required minlength="20" maxlength="1000" aria-describedby="contactMessage-count contactMessage-error"></textarea>
+          <p class="hint" id="contactMessage-count">0 / 1000 characters (minimum 20)</p>
+          <p class="error-msg" id="contactMessage-error" aria-live="polite"></p>
+        </div>
+        <button class="btn" type="submit">Prepare my email</button>
+      </form>
+      <div class="response" id="contact-response" role="status" aria-live="polite" hidden></div>
+    </section>
+  </main>
+
+  <!-- Shared site footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <h2>Ubuntu Paws Rescue</h2>
+        <p>Rescuing, rehoming and caring for animals in Johannesburg.</p>
+        <p>Fictional organisation created for a student web-development project.</p>
+      </section>
+      <section>
+        <h2>Quick links</h2>
+        <ul>
+          <li><a href="services.html">Adopt a dog or cat</a></li>
+          <li><a href="enquiry.html">Volunteer or sponsor</a></li>
+          <li><a href="about.html">Our story</a></li>
+        </ul>
+      </section>
+      <section>
+        <h2>Contact</h2>
+        <p>12 Example Road, Johannesburg<br>Email: <a href="mailto:hello@ubuntupaws.example">hello@ubuntupaws.example</a></p>
+        <p>&copy; 2026 Ubuntu Paws Rescue</p>
+      </section>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/map.js" defer></script>
+  <script src="js/forms.js" defer></script>
+</body>
+</html>
